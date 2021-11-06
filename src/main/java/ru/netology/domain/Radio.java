@@ -5,7 +5,7 @@ public class Radio {
 
     public void setCurrentRadioStation(int currentRadioStation){
         if (currentRadioStation < 0) {
-            return;
+           return;
         }
         if (currentRadioStation > 9) {
             return;

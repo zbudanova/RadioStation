@@ -67,7 +67,7 @@ public class RadioTest {
     public void shouldPervVolume() {
         Radio radio = new Radio();
 
-        radio.PrevVolume(0);
+        radio.PrevVolume(1);
 
         int expected = 0;
         int actual = radio.currentVolume;
