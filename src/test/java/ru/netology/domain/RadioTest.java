@@ -40,5 +40,38 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    public void shouldCurrentVolume() {
+        Radio radio = new Radio();
 
+        radio.setCurrentVolume(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldNextVolume() {
+        Radio radio = new Radio();
+
+        radio.NextVolume(0);
+
+        int expected = 1;
+        int actual = radio.currentVolume;
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldPervVolume() {
+        Radio radio = new Radio();
+
+        radio.PrevVolume(2);
+
+        int expected = 1;
+        int actual = radio.currentVolume;
+
+        assertEquals(expected, actual);
+    }
 }
