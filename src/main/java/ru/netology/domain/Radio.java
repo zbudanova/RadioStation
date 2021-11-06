@@ -33,14 +33,6 @@ public class Radio {
             this.currentRadioStation = 9;
         }
     }
-    public void setRadioStation(int currentRadioStation) {
-        if (currentRadioStation > 0) {
-            return;
-        }
-        if (currentRadioStation < 10) {
-            return;
-        }
 
-    }
 }
 
