@@ -53,7 +53,7 @@ public class Radio {
         if (currentVolume < 10) {
             this.currentVolume = currentVolume +1;
         }
-        if (currentVolume == 10) {
+        if (currentVolume >= 10) {
             this.currentVolume = 10;
         }
     }
@@ -61,7 +61,10 @@ public class Radio {
         if (currentVolume < 11) {
             this.currentVolume = currentVolume - 1;
         }
-        if (currentVolume == 0) {
+        if (currentVolume >= 0) {
+            this.currentVolume = 0;
+        }
+        if (currentVolume < 0) {
             this.currentVolume = 0;
         }
     }
