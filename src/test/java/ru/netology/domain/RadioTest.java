@@ -1,28 +1,44 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
+import ru.netology.domain.Radio;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RadioTest {
-
+public class RadioTest {
     @Test
-    void setCurrentRadioStation() {
+    public void shouldCurrentRadioStation() {
+        Radio radio = new Radio();
+
+        radio.setCurrentRadioStation(9);
+
+        int expected = 9;
+        int actual = radio.getCurrentRadioStation();
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void getCurrentRadioStation() {
+    public void shouldNextRadioStation() {
+        Radio radio = new Radio();
+
+        radio.NextRadioStation(0);
+
+        int expected = 1;
+        int actual = radio.currentRadioStation;
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldPervRadioStation() {
+        Radio radio = new Radio();
+
+        radio.PrevRadioStation(2);
+
+        int expected = 1;
+        int actual = radio.currentRadioStation;
+
+        assertEquals(expected, actual);
     }
 
-    @Test
-    void nextRadioStation() {
-    }
-
-    @Test
-    void prevRadioStation() {
-    }
-
-    @Test
-    void setRadioStation() {
-    }
 }
