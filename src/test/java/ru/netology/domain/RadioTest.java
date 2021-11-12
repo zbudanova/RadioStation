@@ -6,13 +6,13 @@ import ru.netology.domain.Radio;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
+    Radio radio = new Radio();
     @Test
     public void shouldCurrentRadioStation() {
-        Radio radio = new Radio();
 
-        radio.setCurrentRadioStation(10);
+        radio.setCurrentRadioStation(1);
 
-        int expected = 0;
+        int expected = 1;
         int actual = radio.getCurrentRadioStation();
 
         assertEquals(expected, actual);
@@ -20,9 +20,8 @@ public class RadioTest {
 
     @Test
     public void shouldNextRadioStation() {
-        Radio radio = new Radio();
 
-        radio.NextRadioStation(0);
+        radio.nextRadioStation();
 
         int expected = 1;
         int actual = radio.currentRadioStation;
@@ -31,20 +30,18 @@ public class RadioTest {
     }
     @Test
     public void shouldPervRadioStation() {
-        Radio radio = new Radio();
 
-        radio.PrevRadioStation(2);
+        radio.prevRadioStation();
 
-        int expected = 1;
+        int expected = 0;
         int actual = radio.currentRadioStation;
 
         assertEquals(expected, actual);
     }
     @Test
     public void shouldCurrentVolume() {
-        Radio radio = new Radio();
 
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(0);
 
         int expected = 0;
         int actual = radio.getCurrentVolume();
@@ -54,20 +51,18 @@ public class RadioTest {
 
     @Test
     public void shouldNextVolume() {
-        Radio radio = new Radio();
 
-        radio.NextVolume(11);
+        radio.nextVolume();
 
-        int expected = 10;
+        int expected = 1;
         int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
     @Test
     public void shouldPervVolume() {
-        Radio radio = new Radio();
 
-        radio.PrevVolume(1);
+        radio.prevVolume();
 
         int expected = 0;
         int actual = radio.currentVolume;
