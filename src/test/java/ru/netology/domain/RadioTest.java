@@ -29,12 +29,26 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextRadioStation() {
+    public void shouldNextRadioStationMax() {
+        radio.setCurrentRadioStation(9);
+        radio.nextRadioStation();
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+    @Test
+    public void shouldNextRadioStationMin() {
+        radio.setCurrentRadioStation(0);
         radio.nextRadioStation();
         assertEquals(1, radio.getCurrentRadioStation());
     }
     @Test
-    public void shouldPervRadioStation() {
+    public void shouldPervRadioStationMin() {
+        radio.setCurrentRadioStation(0);
+        radio.prevRadioStation();
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+    @Test
+    public void shouldPervRadioStationMax() {
+        radio.setCurrentRadioStation(10);
         radio.prevRadioStation();
         assertEquals(0, radio.getCurrentRadioStation());
     }
@@ -60,7 +74,14 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextVolume() {
+    public void shouldNextVolumeMax() {
+        radio.setCurrentVolume(10);
+        radio.nextVolume();
+        assertEquals(10, radio.getCurrentVolume());
+    }
+    @Test
+    public void shouldNextVolumeMin() {
+        radio.setCurrentVolume(0);
         radio.nextVolume();
         assertEquals(1, radio.getCurrentVolume());
     }
